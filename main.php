@@ -15,7 +15,7 @@
         <div class="header_nav">
             <ul class="header_nav_list">
                 <li>
-                    <a href="./main.php">
+                    <a href="main.php">
                         <span>Головна</span>
                     </a>
                 </li>
@@ -34,12 +34,11 @@
                 if($_COOKIE['user'] == ''):
              ?>
             <div class="header_nav_profile_content" id="header_nav_profile_content">
-                <form action="authorization.php" method="post">
+                <form action="/authorization.php" method="post">
                     <div style="padding: 7px 4px 2px 4px;">
                         <label for="login">Логін:</label>
                     </div>
-                    <input type="text" name="login"
-                    id="login" placeholder="Введіть логін">
+                    <input type="text" name="login" id="login" placeholder="Введіть логін">
                     <div style="padding: 7px 4px 2px 4px;">
                         <label for="pass">Пароль:</label>
                     </div>
@@ -48,13 +47,15 @@
                     <div style="text-align: center;">
                         <button class="btn btn=success" type="submit" title="Увійти">Увійти</button>
                         <br>
-                        <a href="registration.html">Реєстрація</a>
+                        <a href="/registration.html">Реєстрація</a>
                     </div>
                 </form>
             </div>
             <?php else: ?>
-              <p> Вітаю, <?=$_COOKIE['user']?>  <p>
-
+              <div>
+             <p> Вітаю, <?=$_COOKIE['user']?>  <p>
+                <a href= "/exit.php">Вихід</p>
+                </div>
             <?php  endif; ?>
 
             <?php
@@ -68,7 +69,8 @@
                     <img src="./pictures/noavatar.png">
                 </a>
             </div>
-          <?php else:?> <a href= "/exit.php">Вихід</p>
+
+
           <?php  endif; ?>
         </div>
     </div>

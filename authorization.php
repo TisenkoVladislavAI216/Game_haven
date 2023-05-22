@@ -7,9 +7,9 @@
 
   $pass = md5($pass);
 
-  $mysql = new mysqli('localhost', 'root', 'root', 'game_haven_db');
+  $mysql = new mysqli('localhost', 'ADMIN', 'ADMIN', 'ADMIN');
 
-  $result = $mysql->query("SELECT * FROM `users`
+  $result = $mysql->query("SELECT * FROM `game_haven_users`
   WHERE `login` = '$login' AND `pass` = '$pass'");
 
   $user = $result->fetch_assoc();
